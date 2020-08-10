@@ -1,7 +1,8 @@
 import * as React from 'react'
+import Card from './components/Card'
 
 const TestApp = () => (
-  <h1>Change me</h1>
+  <Card />
 )
 
 export default TestApp
