@@ -8,7 +8,7 @@ export const MainWrapper = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-  max-width: 90vw;
+  max-width: 335px;
   width: 100%;
   height: 300px;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.16);
@@ -16,10 +16,15 @@ export const CardWrapper = styled.div`
   padding: 24px;
 `;
 
-export const HeadingWrapper = styled.div`
+export const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
+export const FormContainer = styled.div`
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+`;
 
 

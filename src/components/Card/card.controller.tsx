@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import RadioButton from './../RadioButton/radio.controller';
 import {
   MainWrapper,
   CardWrapper,
-  HeadingWrapper
+  HeadingContainer,
+  FormContainer
 
 } from './card.view';
 
-const Card: React.FC = () => {
+interface CardProps {
+  price: any 
+}
+
+const Card: React.FC<CardProps> = ({ price }) => {
+  console.log(price)
+  const [checked, setChecked] = useState();
+
   return (
     <MainWrapper>
       <CardWrapper>
-        <HeadingWrapper>
+        <HeadingContainer>
           <span>Тип</span>
           <span>Ціна</span>
-        </HeadingWrapper>
+        </HeadingContainer>
+        <FormContainer>
+          {price.map((item: any) => {
+            return (
+              <RadioButton 
+                priceType={item.type} 
+                priceCost={item.cost} 
+                check={checked === item.type} 
+                onChangeCheck={() => setChecked(item.type)}
+                value={item.type}
+              />
+            )
+          })}
+        </FormContainer>
       </CardWrapper>
     </MainWrapper>
   );
