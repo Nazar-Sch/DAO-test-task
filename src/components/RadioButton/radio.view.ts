@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface PropsToStyle {
+interface PropsToStyleRadio {
   checked: boolean;
 }
 
@@ -12,7 +12,7 @@ export const RadioLabel = styled.label`
   padding-bottom: 12px;
 `;
 
-export const RadioSpan = styled.span<PropsToStyle>`
+export const RadioSpan = styled.span<PropsToStyleRadio>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,6 @@ export const RadioSpan = styled.span<PropsToStyle>`
   border-radius: 50%;
   cursor: pointer;
   margin-right: 16px;
-
 `;
 
 export const RadioInput = styled.input`
@@ -48,16 +47,13 @@ export const RadioInput = styled.input`
   }
 `;
 
-export const RadioOptions = styled.div<PropsToStyle>`
+export const RadioOptions = styled.div<PropsToStyleRadio>`
   display: flex;
   justify-content: space-between;
   width: 100%;
   color: ${({ checked }) => checked ? '#000000' : '#999999'};
 `;
 
-export const PriceText = styled.span<PropsToStyle>`
+export const PriceText = styled.span<PropsToStyleRadio>`
   font-weight: ${({ checked }) => checked ? 'bold' : 'light'};
 `;
-
-
-

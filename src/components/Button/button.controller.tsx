@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonItem } from './button.view'
+import { ButtonItem, CartIcon } from './button.view'
 
 interface PropsToButton {
     onSubmitClick(): void,
@@ -7,7 +7,10 @@ interface PropsToButton {
 } 
 
 const Button: React.FC<PropsToButton> = ({ onSubmitClick, disabled }) => (
-    <ButtonItem onClick={onSubmitClick} disabled={disabled}>До кошика</ButtonItem>
+    <ButtonItem onClick={onSubmitClick} disabled={disabled}>
+        <CartIcon />
+        До кошика
+    </ButtonItem>
 )
 
 export default Button;

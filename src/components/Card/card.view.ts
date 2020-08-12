@@ -38,4 +38,3 @@ export const SelectedContainer = styled.div`
   font-size: 24px;
   padding-bottom: 40px;
 `;
-
