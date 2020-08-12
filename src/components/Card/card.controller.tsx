@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 
-import RadioButton from './../RadioButton/radio.controller';
+import RadioButton from './../RadioButton';
+import Button from '../Button';
 import {
   MainWrapper,
   CardWrapper,
   HeadingContainer,
-  FormContainer
-
+  FormContainer,
+  SelectedContainer,
 } from './card.view';
 
+
 interface CardProps {
-  price: any 
+  price: any,
+  onSubmit(item: any): void
 }
 
-const Card: React.FC<CardProps> = ({ price }) => {
-  console.log(price)
+const Card: React.FC<CardProps> = ({ price, onSubmit }) => {
   const [checked, setChecked] = useState();
+
+  const selected = price.find((item: any) => checked === item.type)
 
   return (
     <MainWrapper>
@@ -37,6 +41,15 @@ const Card: React.FC<CardProps> = ({ price }) => {
             )
           })}
         </FormContainer>
+        {selected ? 
+        <SelectedContainer>
+          <span>{selected.cost} грн</span>
+          <Button onSubmitClick={() => onSubmit(selected)} disabled={false}/>
+        </SelectedContainer> : 
+        <SelectedContainer>
+          <span></span>
+          <Button onSubmitClick={() => onSubmit(selected)} disabled={true} />
+        </SelectedContainer>}
       </CardWrapper>
     </MainWrapper>
   );

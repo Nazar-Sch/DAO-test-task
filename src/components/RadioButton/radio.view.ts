@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface PropsToStyle {
-  checked?: boolean;
+  checked: boolean;
 }
 
 export const RadioLabel = styled.label`
@@ -53,13 +53,10 @@ export const RadioOptions = styled.div<PropsToStyle>`
   justify-content: space-between;
   width: 100%;
   color: ${({ checked }) => checked ? '#000000' : '#999999'};
-  span {
-    cursor: pointer;
-  }
 `;
 
 export const PriceText = styled.span<PropsToStyle>`
-  font-weight: ${({ checked }) => checked ? 'bold' : 'normal'};
+  font-weight: ${({ checked }) => checked ? 'bold' : 'light'};
 `;
 
 

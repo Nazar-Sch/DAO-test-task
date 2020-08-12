@@ -3,13 +3,21 @@ module.exports = {
   addons: ['@storybook/addon-actions', '@storybook/addon-links'],
   webpackFinal: async config => {
     config.module.rules.push({
-      test: /\.(ts|tsx)$/,
+      test: /\.(ts|tsx|)$/,
       use: [
         {
           loader: require.resolve('ts-loader'),
         },
       ],
     });
+    const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test('.svg'));
+    fileLoaderRule.exclude = /\.svg$/;
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },

@@ -10,10 +10,11 @@ export const MainWrapper = styled.div`
 export const CardWrapper = styled.div`
   max-width: 335px;
   width: 100%;
-  height: 300px;
   box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.16);
   border-radius: 16px;
-  padding: 24px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 `;
 
 export const HeadingContainer = styled.div`
@@ -27,4 +28,14 @@ export const FormContainer = styled.div`
   flex-direction: column;
 `;
 
+export const SelectedContainer = styled.div`
+  display: flex;
+  width: 100%;
+  padding-right: 25px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 32px;
+  font-size: 24px;
+  padding-bottom: 40px;
+`;
 

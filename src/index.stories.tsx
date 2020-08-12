@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TestApp from './'
+import TestApp from './index'
 
 const Regular: React.FC = () => (
   <TestApp />

@@ -24,7 +24,7 @@ const RadioButton: React.FC<RadioProps> = ({ priceType, priceCost, check, onChan
         <RadioSpan checked={check} />
           <RadioOptions checked={check}>
             <span>{priceType}</span>
-            <PriceText>{`${priceCost} грн`}</PriceText>
+            <PriceText checked={check}>{`${priceCost} грн`}</PriceText>
           </RadioOptions>
       </RadioLabel>
     </>
